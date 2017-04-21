@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns:fx="http://javafx.com/fxml" fx:controller="org.tjumyk.IndexPageController">
+  <children>
+    <VBox id="VBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER" prefHeight="273.0" prefWidth="562.0" spacing="5.0">
+          <children>
+            <ImageView id="tju" fitHeight="160.0" fitWidth="161.00009999999747">
+              <image>
+                <Image url="@tju.png" preserveRatio="true" smooth="true" />
+              </image>
+            </ImageView>
+            <VBox id="VBox" alignment="CENTER" spacing="5.0">
+              <children>
+                <Label id="label1" text="选课管理系统">
+                  <font>
+                    <Font name="STXingkai" size="34.0" />
+                  </font>
+                  <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+                  </VBox.margin>
+                </Label>
+                <GridPane id="GridPane" prefHeight="130.0" prefWidth="285.0" VBox.margin="$x1">
+                  <children>
+                    <Label id="label2" text="Server" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                    <Label id="label3" prefHeight="14.0" prefWidth="55.0" text="User" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                    <Label id="label4" text="Password" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="2" />
+                    <TextField id="textField1" fx:id="server" prefHeight="20.0" prefWidth="135.0" text="localhost:3306" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                    <TextField id="textField2" fx:id="user" prefHeight="20.0" prefWidth="135.0" text="root" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                    <PasswordField id="passwordField1" onAction="#loginFired" fx:id="password" prefHeight="20.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <Button id="button1" onAction="#loginFired" prefHeight="32.0" prefWidth="111.0" text="登录" VBox.margin="$x1" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <Label id="label6" fx:id="message" opacity="0.0" text="Message" />
+      </children>
+    </VBox>
+    <Label id="label5" alignment="CENTER" contentDisplay="CENTER" text="Version: 1.0 Copyright by tjumyk 2012" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    </Label>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

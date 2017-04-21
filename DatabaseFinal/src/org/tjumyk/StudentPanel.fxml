@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="org.tjumyk.StudentPanelController"
+ AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+  <children>
+    <AnchorPane id="anchorPane2" fx:id="calculatePanel" prefHeight="320.0" prefWidth="600.0" styleClass="bottomPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <BarChart fx:id="chart" prefHeight="195.0" prefWidth="418.0" title="" titleSide="LEFT" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="12.0">
+          <xAxis>
+            <CategoryAxis id="xAxis1" side="BOTTOM">
+              <categories>
+                <FXCollections fx:factory="observableArrayList" />
+              </categories>
+            </CategoryAxis>
+          </xAxis>
+          <yAxis>
+            <NumberAxis id="yAxis1" side="LEFT" />
+          </yAxis>
+        </BarChart>
+        <VBox id="VBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+          <children>
+            <GridPane id="GridPane" maxWidth="170.0" styleClass="tablePanel">
+              <children>
+                <Label id="label9" text="最高分" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+                  </GridPane.margin>
+                </Label>
+                <Label id="label10" text="最低分" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                <Label id="label10" text="挂科数" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="2" />
+                <Label id="label10" text="挂科率" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="3" />
+                <Label id="label10" text="平均绩点" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="4" />
+                <Label id="label10" text="加权平均分" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="5" />
+                <Label id="label11" fx:id="cal_max_score" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="0" />
+                <Label id="label11" fx:id="cal_min_score" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="1" />
+                <Label id="label11" fx:id="cal_fail_rate" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="3" />
+                <Label id="label11" fx:id="cal_fail_count" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="2" />
+                <Label id="label11" fx:id="cal_ave_score" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="4" />
+                <Label id="label11" fx:id="cal_power_ave_score" text="NaN" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="5" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x2" />
+              </padding>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x3" />
+              </VBox.margin>
+            </GridPane>
+            <Button id="button3" prefHeight="32.0" prefWidth="107.0" onAction="#CalculateReturnFired" text="返回" />
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="anchorPane2" prefHeight="114.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <VBox id="VBox" fx:id="bottomPanel" alignment="CENTER" layoutY="14.0" opacity="0.0" prefHeight="101.0" prefWidth="547.9998779296875" spacing="5.0" styleClass="bottomPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+          <children>
+            <StackPane id="StackPane">
+              <children>
+                <HBox id="HBox" fx:id="new_panel" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <TextField id="textField3" fx:id="new_id" prefHeight="32.0" prefWidth="110.0" promptText="ID" />
+                    <TextField id="textField3" fx:id="new_name" prefHeight="20.0" prefWidth="100.0" promptText="姓名" />
+                    <ChoiceBox id="choiceBox1" fx:id="new_gender" minWidth="48.0" prefHeight="32.0" prefWidth="100.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                    <TextField id="textField3" fx:id="new_start_year" prefHeight="32.0" prefWidth="100.0" promptText="入学年份" />
+                    <TextField id="textField3" fx:id="new_start_age" prefHeight="32.0" prefWidth="100.0" promptText="入学年龄" />
+                    <ComboBox id="comboBox2" fx:id="new_class" prefHeight="32.0" prefWidth="200.0">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ComboBox>
+                  </children>
+                </HBox>
+                <Label id="label8" fx:id="deletePrompt" text="确认删除此条记录？" visible="false" />
+              </children>
+            </StackPane>
+            <HBox id="HBox" alignment="CENTER" spacing="5.0">
+              <children>
+                <StackPane id="StackPane">
+                  <children>
+                    <Button id="button2" fx:id="sureAddBtn" onAction="#SureAddFired" text="确认添加" />
+                    <Button id="button2" fx:id="sureUpdateBtn" onAction="#SureUpdateFired" text="确认修改" />
+                    <Button id="button2" fx:id="sureDeleteBtn" onAction="#SureDeleteFired" text="确认删除" />
+                  </children>
+                </StackPane>
+                <Button id="button2" onAction="#CancelFired" text="取消">
+                  <HBox.margin>
+                    <Insets left="10.0" right="10.0" />
+                  </HBox.margin>
+                </Button>
+              </children>
+              <VBox.margin>
+                <Insets top="10.0" />
+              </VBox.margin>
+            </HBox>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x3" />
+          </padding>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <HBox id="HBox" alignment="CENTER" layoutX="14.0" layoutY="14.0" spacing="5.0">
+      <children>
+        <ImageView id="lookup.png" fitHeight="32.0" fitWidth="32.0">
+          <image>
+            <Image url="@lookup.png" preserveRatio="true" smooth="true" />
+          </image>
+        </ImageView>
+        <TextField id="textField1" fx:id="lookup" onAction="#LookUpFired" prefHeight="32.0" prefWidth="201.0" promptText="请输入学号或姓名开始查询" />
+      </children>
+    </HBox>
+    <AnchorPane id="anchorPane1" fx:id="tableContainer" prefHeight="341.0" prefWidth="572.0" styleClass="tablePanel" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="49.0">
+      <children>
+        <TableView id="tableView1" fx:id="table" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="12.0" />
+        <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+          <children>
+            <Label id="label1" text="第" />
+            <Label id="label2" fx:id="current_page" prefHeight="14.0" prefWidth="8.000099999997474" text="1" />
+            <Label id="label3" text="页，共" />
+            <Label id="label4" fx:id="total_page" text="1" />
+            <Label id="label5" text="页" />
+          </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+          <children>
+            <Hyperlink id="hyperlink1" onAction="#PrevPageFired" text="上一页" underline="true" />
+            <Hyperlink id="hyperlink2" onAction="#NextPageFired" text="下一页" underline="true" />
+            <Label id="label6" text="跳转至第" />
+            <TextField id="textField2" fx:id="jump_page" onAction="#JumpPageFired" prefHeight="20.0" prefWidth="32.0" />
+            <Label id="label7" text="页" />
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+    <HBox id="HBox" fx:id="buttonPane" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+      <children>
+        <Button id="button1" maxHeight="-Infinity" onAction="#AddFired" prefHeight="10.0" text="添加学生" />
+        <Button id="button1" maxHeight="-Infinity" onAction="#UpdateFired" prefHeight="10.0" text="修改学生" />
+        <Button id="button1" maxHeight="-Infinity" onAction="#DeleteFired" prefHeight="10.0" text="删除学生" />
+        <Button id="button1" defaultButton="true" maxHeight="-Infinity" onAction="#CalculateFired" prefHeight="10.0" text="成绩统计" />
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+</AnchorPane>

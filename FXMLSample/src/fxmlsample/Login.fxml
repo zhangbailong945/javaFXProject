@@ -25,11 +25,12 @@
             <children>
                 <Label text="%sigIn" style="-fx-font:NORMAL 14 Tahoma;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Label text="%userName" GridPane.columnIndex="0" GridPane.rowIndex="1" labelFor="$usernameField"/>
-                <TextField fx:id="usernameField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <TextField fx:id="usernameField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="请输入用户名"/>
                 <Label text="%password" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$passwordFeild"/>
-                <PasswordField fx:id="passwordField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#handlePasswordFieldAction"/>
+                <PasswordField fx:id="passwordField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="请输入密码" onAction="#handlePasswordFieldAction"/>
                 <Button fx:id="submitButton" text="%submit" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#handleSubmitButtonAction"/>
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill:#ff0000;"/>
+                <Button fx:id="closeButton" text="%close" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#handleCloseButtonAction"/>
+                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-text-fill:#ff0000;"/>
                 
             </children>
         </GridPane>
