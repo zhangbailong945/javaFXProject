@@ -19,7 +19,7 @@ public class DatabaseManager {
     public final String SQLSERVER_JDBC_DRIVER_NAME="com.microsoft.sqlserver.jdbc.SQLServerDriver";
     public final String MYSQL_JDBC_URL_HEAD="jdbc:mysql://";
     public final String SQLSERVER_JDBC_URL_HEAD="";
-    public final static String DATABASE_NAME="test";
+    public final static String DATABASE_NAME="school";
     public final static Driver DEFAULT_DRIVER=Driver.MYSQL;
     private Driver driver=null;
     private Connection conn;

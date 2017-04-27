@@ -28,12 +28,14 @@
                 <TextField fx:id="usernameField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="请输入用户名"/>
                 <Label text="%password" GridPane.columnIndex="0" GridPane.rowIndex="2" labelFor="$passwordFeild"/>
                 <PasswordField fx:id="passwordField" prefColumnCount="10" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="请输入密码" onAction="#handlePasswordFieldAction"/>
-                <Button fx:id="submitButton" text="%submit" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#handleSubmitButtonAction"/>
-                <Button fx:id="closeButton" text="%close" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#handleCloseButtonAction"/>
-                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-text-fill:#ff0000;"/>
-                
+                <HBox GridPane.columnIndex="1" spacing="10"  GridPane.rowIndex="3">
+                  <Button fx:id="submitButton" text="%submit"  onAction="#handleSubmitButtonAction"/>
+                  <Button fx:id="closeButton" text="%close"   onAction="#handleCloseButtonAction"/>
+                </HBox>
+                <Label fx:id="buttonStatusText" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-text-fill:#ff0000;"/>                
             </children>
         </GridPane>
+
     </center>
 </BorderPane>
 

@@ -12,9 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import util.DatabaseManager;
 
 /**
  *
@@ -22,15 +25,31 @@ import javafx.stage.StageStyle;
  */
 public class FXMLSample extends Application {
     
+     private static FXMLSample instance;
+     static DatabaseManager dbManager;
      private  double xOffset=0;
      private  double yOffset =0;   
+     static AnchorPane indexPage,loginPage;
+     private Stage stage;
+     
+     public static FXMLSample FXMLSample()
+     {
+         return instance;
+     }
      
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setTitle("FXML Example");
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"),ResourceBundle.getBundle("fxmlsample.FXMLSample"));        
+        //stage.setTitle("FXML Example");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.png")));
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"),ResourceBundle.getBundle("fxmlsample.zh_cn"));
+        
         Scene scene = new Scene(root,400,300);
         Button closeButton=(Button)root.lookup("#closeButton");
+        Button submitButton=(Button)root.lookup("#submitButton");
+        
+        
+        
+        //关闭按钮，单击事件，退出舞台
         closeButton.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
@@ -38,6 +57,8 @@ public class FXMLSample extends Application {
             }
         
         });
+        
+        //用于拖动整个组件,当鼠标对于登录窗体按住不放进行拖动
         root.setOnMousePressed(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
@@ -46,7 +67,7 @@ public class FXMLSample extends Application {
             }
         
         });
-        
+        //当鼠标释放，组件的位置就是当前的位置
         root.setOnMouseDragged(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent event) {
