@@ -20,6 +20,16 @@ public class LoginController implements Initializable {
     
     @FXML
     private Label label;
+    private LoachBlogPC application; 
+    
+        public void setApp(LoachBlogPC application){  
+        this.application = application;  
+    }  
+        
+    @FXML  
+    public void userLogin(ActionEvent event) {  
+        application.gotoMain();;
+    } 
     
     @FXML
     private void handleButtonAction(ActionEvent event) {

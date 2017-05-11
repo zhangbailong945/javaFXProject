@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <AnchorPane id="bannerAP" layoutY="-1.0" prefHeight="127.0" prefWidth="601.0" style="-fx-background-color: #F49265;" />
+      <AnchorPane id="menuAP" layoutY="126.0" prefHeight="46.0" prefWidth="601.0" style="-fx-background-color: #BFA295;" />
+      <SplitPane id="articleAP" layoutY="171.0" prefHeight="300.0" prefWidth="601.0" />
+      <AnchorPane id="footerAP" layoutY="470.0" prefHeight="46.0" prefWidth="601.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>

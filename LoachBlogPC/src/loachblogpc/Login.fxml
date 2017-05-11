@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="291.0" prefWidth="402.0" style="-fx-opacity: 0.05; -fx-background-color: transparent;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="loachblogpc.LoginController" />
+<AnchorPane id="bcAP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.99" prefHeight="370.0" prefWidth="512.0" style="-fx-opacity: 1; -fx-border-radius: 20; -fx-border-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="77.0" layoutY="42.0" prefHeight="287.0" prefWidth="359.0" style="-fx-opacity: 1;" AnchorPane.rightAnchor="76.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="169.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="140.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button id="loginBtn" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#userLogin" prefHeight="29.0" prefWidth="79.0" text="登录" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button id="exitBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" text="退出" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" prefHeight="22.0" prefWidth="36.0" text="账号：" GridPane.rowIndex="1" />
+            <Label text="密码：" GridPane.rowIndex="2" />
+            <PasswordField id="userpassword" promptText="请输入密码" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField id="userName" promptText="请输入账号" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fitHeight="98.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Label id="msgL" layoutX="76.0" layoutY="341.0" />
+   </children>
+</AnchorPane>

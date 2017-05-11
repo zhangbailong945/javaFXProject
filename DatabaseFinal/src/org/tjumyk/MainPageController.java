@@ -31,6 +31,8 @@ public class MainPageController implements Initializable {
     public static MainPageController getInstance() {
         return instance;
     }
+    
+    
     @FXML
     AnchorPane titlepane, menupane, central_panel;
     @FXML
