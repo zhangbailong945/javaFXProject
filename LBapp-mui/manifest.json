@@ -392,7 +392,8 @@
 					"css/app.css",
 					"js/zepto.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"images/about.png"
 				],
 				"refer": [
 					"webview.html"

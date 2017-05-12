@@ -1,0 +1,57 @@
+{
+	"index.html": {
+		"resources": [
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/zepto.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/update.js",
+			"index-sub.html"
+		],
+		"refer": [
+			"index-sub.html",
+			"index-menu.html",
+			"search.html"
+		]
+	},
+	"index-sub.html": {
+		"resources": [
+			"js/underscore.js"
+		]
+	},
+	"index-menu.html": {
+		"resources": [
+			"css/mui.min.css"
+		],
+		"refer": [
+			"about.html"
+		]
+	},
+	"about.html": {
+		"resources": [
+			"images/about.png",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"webview.html"
+		]
+	},
+	"webview.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"search.html": {
+		"resources": [
+			"js/underscore.js",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/zepto.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	}
+}
